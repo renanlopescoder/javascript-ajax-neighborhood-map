@@ -45,6 +45,10 @@ function loadData() {
 
     var wikiUrl = "http://en.wikipedia.org/w/api.php?action=opensearch&search="+ cityString + "&format=json&callback=wikiCallback";
 
+    var timeoutWiki = setTimeout(function(){
+        $wikiElem.text("Sorry, we failed to get wikipedia articles (Timeout Error) please check your internet connection and try again.");
+    }, 8000);
+
     $.ajax({
         url : wikiUrl,
         dataType : "jsonp",
@@ -54,7 +58,9 @@ function loadData() {
                 articleStr = articleList[i];
                 var url = "http://en.wikipedia.org/wiki/"+articleStr;
                 $wikiElem.append('<li><a href="' + url + '">' + articleStr +'</a></li>');
-            }
+            };
+            
+            clearTimeout(timeoutWiki);
         }
     });
 
