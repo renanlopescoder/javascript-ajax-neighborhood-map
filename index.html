@@ -1,35 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Renan Lopes">
+    <meta name="description" content="Front End Web Developer">
     <title>Your Moving Companion</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/materialize.min.css">
 </head>
-<body>
 
-    <form id="form-container" class="form-container">
-        <label for="street">Street: </label><input type="text" id="street" value="">
-        <label for="city">City: </label><input type="text" id="city" value="">
-        <button id="submit-btn">Submit</button>
-    </form>
+<body class="white">
+    <nav class="white" role="navigation">
+        <div class="nav-wrapper container">
+            <a id="logo-container" href="#/" class="brand-logo">
+                <div class="row">
+                    <span class="grey-text text-darken-1 cinzel-font">
+            </span>
+                </div>
+            </a>
+            <ul class="right russo-font black-text row">
+                <form id="form-container" class="form-container">
+                    <li><input class="col s11 m11" type="text" id="street" value="" placeholder="Street"></li>
+                    <li><input class="col s11 m11" type="text" id="city" value="" placeholder="City"></li>
+                    <li><button class="btn indigo darken-4" id="submit-btn">Submit</button></li>
+                </form>
+            </ul>
+        </div>
+    </nav>
 
-    <hr>
-
-    <h2 id="greeting" class="greeting">Where do you want to live?</h2>
-
-
-    <div class="wikipedia-container">
-        <h3 id="wikipedia-header">Relevant Wikipedia Links</h3>
-        <ul id="wikipedia-links">Type in an address above and find relevant Wikipedia articles here!</ul>
+    <h3 id="greeting" class="greeting indigo-text thin">Where do you want to live?</h3>
+    <div class="row">
+        <div class="col s12 m6 l4">
+            <div class="card z-depth-3">
+                <div class="card-content">
+                    <h4 class="card-title indigo-text text-lighten-1 center-align" id="nytimes-header">New York Times Articles</h4>
+                    <ul id="nytimes-articles" class="article-list">What's going on in your new city? Enter an address and hit submit and the NY Times will tell you here!</ul>
+                </div>
+            </div>
+        </div>
+        <div class="col s12 m6 l4">
+            <div class="card z-depth-3">
+                <div class="card-content">
+                    <h4 class="card-title indigo-text text-lighten-1 center-align" id="wikipedia-header">Wikipedia Links</h4>
+                    <ul id="wikipedia-links">Type in an address above and find relevant Wikipedia articles here!</ul>
+                </div>
+            </div>
+        </div>
+        <div class="col s12 m12 l4">
+            <h4 class="card-title indigo-text text-lighten-1 center-align thin">Google Maps</h4>
+            <div id="maps"></div>
+        </div>
     </div>
-
-
-    <div class="nytimes-container">
-        <h3 id="nytimes-header">New York Times Articles</h3>
-        <ul id="nytimes-articles" class="article-list">What's going on in your new city? Enter an address and hit submit and the NY Times will tell you here!</ul>
-    </div>
-
     <script src="js/libs/jquery.min.js"></script>
     <script src="js/script.js"></script>
 </body>
+
 </html>
